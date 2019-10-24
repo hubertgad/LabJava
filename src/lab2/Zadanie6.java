@@ -16,30 +16,26 @@ public class Zadanie6
 {
 	public static void main(String[] args)
 	{
-    Scanner keyboard = new Scanner(System.in);
-    System.out.println("Witaj! Obliczymy Ci mega korzystną ratke! Podaj kwote kretytu, wplate wlasna oraz liczbe rat.");
-    System.out.println("Kwota kredytu (maksymalnie 300 000): ");
-    int kwota = keyboard.nextInt();
-    System.out.println("Podaj wysokosc wplaty wlasnej: ");
-    int wplata_wlasna = keyboard.nextInt();
-    System.out.println("Podaj ilosc rat (maksymalnie 96): ");
-    int ilosc_rat = keyboard.nextInt();
-    keyboard.close();
-    int oprocentowanie;
-    if (ilosc_rat <= 24)
-      oprocentowanie = 2;
-    else if (ilosc_rat <= 48)
-      oprocentowanie = 3;
-    else if (ilosc_rat <= 60)
-      oprocentowanie = 4;
-    else if (ilosc_rat <= 72)
-      oprocentowanie = 5;
-    else if (ilosc_rat <= 96)
-      oprocentowanie = 6;
-    wysokosc_raty = (wysokosc_kredytu-wplata_wlasna)*oprocentowanie;
-    
-    
-    
-    
-  }
+		Scanner keyboard = new Scanner(System.in);
+		System.out.println("Witaj! Obliczymy Ci mega korzystną ratke! Podaj kwote kretytu, wplate wlasna oraz liczbe rat.");
+		System.out.println("Kwota kredytu (maksymalnie 300 000): ");
+		int wartosc = keyboard.nextInt();
+		System.out.println("Podaj wysokosc wplaty wlasnej: ");
+		int wplata_wlasna = keyboard.nextInt();
+		System.out.println("Podaj ilosc rat (maksymalnie 96): ");
+		int ilosc_rat = keyboard.nextInt();
+		keyboard.close();
+		int oprocentowanie;
+		if (ilosc_rat <= 24)
+			oprocentowanie = 2;
+		else if (ilosc_rat <= 48)
+			oprocentowanie = 3;
+		else if (ilosc_rat <= 60)
+			oprocentowanie = 4;
+		else if (ilosc_rat <= 72)
+			oprocentowanie = 5;
+		else if (ilosc_rat <= 96)
+			oprocentowanie = 6;
+		wysokosc_raty = (wartosc - wplata_wlasna) * wysokosc_raty / 100 + (wartosc - wplata_wlasna);
+	}
 }
