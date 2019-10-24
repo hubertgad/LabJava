@@ -36,6 +36,6 @@ public class Zadanie6
 			oprocentowanie = 5;
 		else if (ilosc_rat <= 96)
 			oprocentowanie = 6;
-		wysokosc_raty = (wartosc - wplata_wlasna) * wysokosc_raty / 100 + (wartosc - wplata_wlasna);
+		wysokosc_raty = ((wartosc - wplata_wlasna) * wysokosc_raty / 100 + (wartosc - wplata_wlasna)) / ilosc_rat;
 	}
 }
