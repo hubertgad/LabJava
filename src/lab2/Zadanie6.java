@@ -36,6 +36,11 @@ public class Zadanie6
 			oprocentowanie = 5;
 		else if (ilosc_rat <= 96)
 			oprocentowanie = 6;
-		wysokosc_raty = ((wartosc - wplata_wlasna) * wysokosc_raty / 100 + (wartosc - wplata_wlasna)) / ilosc_rat;
+		int kwota_splaty = wartosc - wplata_wlasna;
+		int lata_kredytu = raty / 12;
+		for (int i = 0; i < lata_kredytu; i++)
+		{
+
+		}
 	}
 }
