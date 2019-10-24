@@ -1,3 +1,5 @@
+// Napisz program, który narysuje choinkê o wysokoœci podanej przez u¿ytkownika np. 5
+
 package lab2;
 
 public class Zadanie1

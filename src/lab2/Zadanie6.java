@@ -1,12 +1,12 @@
 /*
-  W salonie samochodowym zaoferowano sprzedaż leasingową pojazdów. 
-  Napisz kod, który policzy miesięczne zobowiązanie z uwzględnieniem odsetek i wpłaconego kapitału własnego.
-  Dane wejściowe to maksymalna kwota: 300 tyś PLN, liczba rat do 96. Oprocentowanie wynosi:
-  - do 24 miesięcy 2%
-  - do 48 miesięcy 3%
-  - do 60 miesięcy 4%
-  - do 72 miesięcy 5%
-  - do 96 miesięcy 6%
+  W salonie samochodowym zaoferowano sprzedaz leasingowa pojazdow. 
+  Napisz kod, ktory policzy miesieczne zobowiazanie z uwzglednieniem odsetek i wpaaconego kapitalu wlasnego.
+  Dane wejsciowe to maksymalna kwota: 300 tys PLN, liczba rat do 96. Oprocentowanie wynosi:
+  - do 24 miesiecy 2%
+  - do 48 miesiecy 3%
+  - do 60 miesiecy 4%
+  - do 72 miesiecy 5%
+  - do 96 miesiecy 6%
 */
 
 package lab2;
@@ -17,7 +17,7 @@ public class Zadanie6
 	public static void main(String[] args)
 	{
 		Scanner keyboard = new Scanner(System.in);
-		System.out.println("Witaj! Obliczymy Ci mega korzystną ratke! Podaj kwote kretytu, wplate wlasna oraz liczbe rat.");
+		System.out.println("Witaj! Obliczymy Ci mega korzystna ratke! Podaj kwote kretytu, wplate wlasna oraz liczbe rat.");
 		System.out.println("Kwota kredytu (maksymalnie 300 000): ");
 		int wartosc = keyboard.nextInt();
 		System.out.println("Podaj wysokosc wplaty wlasnej: ");
@@ -25,22 +25,20 @@ public class Zadanie6
 		System.out.println("Podaj ilosc rat (maksymalnie 96): ");
 		int ilosc_rat = keyboard.nextInt();
 		keyboard.close();
-		int oprocentowanie;
+		double oprocentowanie = 1;
 		if (ilosc_rat <= 24)
-			oprocentowanie = 2;
+			oprocentowanie = 1.02;
 		else if (ilosc_rat <= 48)
-			oprocentowanie = 3;
+			oprocentowanie = 1.03;
 		else if (ilosc_rat <= 60)
-			oprocentowanie = 4;
+			oprocentowanie = 1.04;
 		else if (ilosc_rat <= 72)
-			oprocentowanie = 5;
+			oprocentowanie = 1.05;
 		else if (ilosc_rat <= 96)
-			oprocentowanie = 6;
+			oprocentowanie = 1.06;
 		int kwota_splaty = wartosc - wplata_wlasna;
-		int lata_kredytu = raty / 12;
-		for (int i = 0; i < lata_kredytu; i++)
-		{
-
+		double wysokosc_raty = kwota_splaty * oprocentowanie / ilosc_rat;
+		System.out.print("Wysokosc raty: ");
+		System.out.format("%.2f%n", wysokosc_raty);
 		}
-	}
 }
