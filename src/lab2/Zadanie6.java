@@ -16,14 +16,35 @@ public class Zadanie6
 {
 	public static void main(String[] args)
 	{
+		boolean kwotaPrawidlowa = false, 
+			iloscRatPrawidlowa = false, 
+			wplataWlasnaPrawidlowa = false;
+		
+		int wplataWlasna,
+		
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Witaj! Obliczymy Ci mega korzystna ratke! Podaj kwote kretytu, wplate wlasna oraz liczbe rat.");
-		System.out.println("Kwota kredytu (maksymalnie 300 000): ");
-		int wartosc = keyboard.nextInt();
-		System.out.println("Podaj wysokosc wplaty wlasnej: ");
-		int wplata_wlasna = keyboard.nextInt();
-		System.out.println("Podaj ilosc rat (maksymalnie 96): ");
-		int ilosc_rat = keyboard.nextInt();
+		do
+		{
+			System.out.println("Podaj kwote kredytu (maksymalnie 300 000): ");
+			int wartosc = keyboard.nextInt();
+			if ((wartosc <= 300000) & (wartosc>0))
+				kwota_prawidlowa = true;
+		} while (kwotaPawidlowa == false);
+		do
+		{
+			System.out.println("Podaj wysokosc wplaty wlasnej (0 - 100% kwoty): ");
+			wplataWlasna = keyboard.nextInt();
+			if ((wplataWlasna >= 0 ) & (wplataWlasna < wartosc))
+				wplataWlasnaPrawidlowa = true;
+		} while (wplataWlasnaPrawidlowa == false);
+		do
+		{
+			System.out.println("Podaj ilosc rat (maksymalnie 96): ");
+			int ilosc_rat = keyboard.nextInt();
+			if ((ilosc_rat > 0) & (ilosc_rat <= 96) 
+				iloscRatPrawidlowa = true;
+		} while (iloscRatPrawidlowa == false);
 		keyboard.close();
 		double oprocentowanie = 1;
 		if (ilosc_rat <= 24)
