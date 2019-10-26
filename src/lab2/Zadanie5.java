@@ -1,6 +1,7 @@
 // Napisz program realizuj¹cy funkcje kalkulatora, z uwzglêdnieniem, ograniczenia dzielenia przez 0.
 
 package lab2;
+import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.PatternSyntaxException;
 
@@ -10,10 +11,14 @@ public class Zadanie5
 	{
 		Scanner keyboard = new Scanner(System.in);
 		String wyrazenie = "NULL";
-		int wynik = 0;
+		String[] argumentyStringTabl = new String[2];
+		int wynik = 0,
+			argumentyIntTabl[] = new int [2];
 		boolean[] wyjatek = new boolean[1];
 		wyjatek[0] = false;
-		while (wyrazenie != "koniec")
+		System.out.print("Witaj we wspanialym kalkulatorze. Podaj wyra¿enie w formacie: \"liczba1 [znak] liczba2\" na przyk³ad: 2 + 2.\n"
+				+ "Obs³ugiwane dzia³ania: +, -, *, /, %.\n");
+		while (!wyrazenie.equals("koniec"))
 		{
 			do
 			{
@@ -23,88 +28,50 @@ public class Zadanie5
 				{
 					if (wyrazenie.contains("*"))
 					{
-						try
-						{
-							String[] czesci = wyrazenie.split("[*]");
-							int i = Integer.parseInt(czesci[0]);
-							int j = Integer.parseInt(czesci[1]);
-							wynik = i * j;
-						}
-						catch (PatternSyntaxException split)
-						{
-							bladSkladni(wyjatek);
-						}
+							zamaniaNaInt(argumentyIntTabl, wyrazenie.split("[*]", 2));
+							wynik = argumentyIntTabl[0] * argumentyIntTabl[1];
 					}
 					else if (wyrazenie.contains("/"))
 					{
-						try
-						{
-							String[] czesci = wyrazenie.split("[/]");
-							int i = Integer.parseInt(czesci[0]);
-							int j = Integer.parseInt(czesci[1]);
-							wynik = i / j;
-						}
-						catch (ArithmeticException AE)
-						{
-							dzieleniePrzezZero(wyjatek);
-						}
-						catch (PatternSyntaxException split)
-						{
-							bladSkladni(wyjatek);
-						}
-					}
+							zamaniaNaInt(argumentyIntTabl, wyrazenie.split("[/]", 2));
+							wynik = argumentyIntTabl[0] / argumentyIntTabl[1];
+							}
 					else if (wyrazenie.contains("%"))
-					{
-						try
-						{
-							String[] czesci = wyrazenie.split("[%]");
-							int i = Integer.parseInt(czesci[0]);
-							int j = Integer.parseInt(czesci[1]);
-							wynik = i % j;
-						}
-						catch (PatternSyntaxException split)
-						{
-							bladSkladni(wyjatek);
-						}
+					{		zamaniaNaInt(argumentyIntTabl, wyrazenie.split("[%]", 2));
+							wynik = argumentyIntTabl[0] % argumentyIntTabl[1];
 					}
 					else if (wyrazenie.contains("+"))
 					{
-						try
-						{
-							String[] czesci = wyrazenie.split("[+]");
-							int i = Integer.parseInt(czesci[0]);
-							int j = Integer.parseInt(czesci[1]);
-							wynik = i + j;
-						}
-						catch (PatternSyntaxException split)
-						{
-							bladSkladni(wyjatek);
-						}
+							zamaniaNaInt(argumentyIntTabl, wyrazenie.split("[+]", 2));
+							wynik = argumentyIntTabl[0] + argumentyIntTabl[1];
 					}
 					else if (wyrazenie.contains("-"))
 					{
-						try
-						{
-							String[] czesci = wyrazenie.split("[-]");
-							int i = Integer.parseInt(czesci[0]);
-							int j = Integer.parseInt(czesci[1]);
-							wynik = i - j;
-						}
-						catch (PatternSyntaxException splitpse)
-						{
-							bladSkladni(wyjatek);
-						}
+							zamaniaNaInt(argumentyIntTabl, wyrazenie.split("[-]", 2));
+							wynik = argumentyIntTabl[0] - argumentyIntTabl[1];
 					}
 					else
 					{
 						System.out.print("Podano nieobs³ugiwany format wyra¿enia. ");
 					}
+					System.out.println("Wynik: "+wynik);
 				}
 				catch (NullPointerException containsnpe)
 				{
 					NullPointerException(wyjatek);
 				}
-				System.out.println("Wynik: "+wynik);
+				catch (ArithmeticException AE)
+				{
+					dzieleniePrzezZero(wyjatek);
+				}
+				catch (PatternSyntaxException split)
+				{
+					bladSkladni(wyjatek);
+				}
+				catch (NumberFormatException NFE)
+				{
+					bladSkladni(wyjatek);
+				}
 			}
 			while (wyjatek[0] == true);
 		}
@@ -125,13 +92,10 @@ public class Zadanie5
 		wyjatek[0] = false;
 		System.out.println("Nie podano ¿adnej wartoœci. WprowadŸ dane.");		
 	}
-	static void oblicz(String[] czesci, char znak)
+	static void zamaniaNaInt(int[] argumentyIntTabl, String[] argumentyStringTabl)
 	{
-		if (znak == '*')
-			;
-		int i = Integer.parseInt(czesci[0]);
-		int j = Integer.parseInt(czesci[1]);
-		int wynik = i + j;
-		System.out.println("Wynik: "+wynik);
+		argumentyIntTabl[0] = Integer.parseInt(argumentyStringTabl[0]);
+		argumentyIntTabl[1] = Integer.parseInt(argumentyStringTabl[1]);
+		
 	}
 }
