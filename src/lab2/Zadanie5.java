@@ -15,13 +15,13 @@ public class Zadanie5
 		boolean[] wyjatek = new boolean[1];
 		wyjatek[0] = false;
 		System.out.print("Witaj we wspanialym kalkulatorze. Podaj wyraøenie w formacie: \"liczba1 [znak] liczba2\" na przyk≥ad: 2 + 2.\n"
-				+ "Obs≥ugiwane dzia≥ania: +, -, *, /, %.\n");
+				+ "Obs≥ugiwane dzia≥ania: +, -, *, /, %. \t\t //Aby zakonczyc wpisz \"koniec\"\n\n");
+		System.out.println("Podaj wyraøenie do obliczenia: ");
+		wyrazenie = keyboard.next();
 		while (!wyrazenie.equals("koniec"))
 		{
 			do
 			{
-				System.out.println("Podaj wyraøenie do obliczenia: ");
-				wyrazenie = keyboard.next();
 				try
 				{
 					if (wyrazenie.contains("*"))
@@ -50,9 +50,9 @@ public class Zadanie5
 					}
 					else
 					{
-						System.out.print("Podano nieobs≥ugiwany format wyraøenia. ");
+						System.out.print("Podano nieobs≥ugiwany format wyraøenia.\n");
 					}
-					System.out.println("Wynik: "+wynik);
+					System.out.println("Wynik: " + wynik + "\n");
 				}
 				catch (NullPointerException containsnpe)
 				{
@@ -70,6 +70,8 @@ public class Zadanie5
 				{
 					bladSkladni(wyjatek);
 				}
+				System.out.println("Podaj wyraøenie do obliczenia: ");
+				wyrazenie = keyboard.next();
 			}
 			while (wyjatek[0] == true);
 		}
@@ -78,17 +80,17 @@ public class Zadanie5
 	static void bladSkladni(boolean[] wyjatek)
 	{
 		wyjatek[0] = false;
-		System.out.println("B≥ad sk≥adni. Wprowadü dane ponownie.");
+		System.out.println("B≥ad sk≥adni. Wprowadü dane ponownie.\n");
 	}
 	static void dzieleniePrzezZero(boolean[] wyjatek)
 	{
 		wyjatek[0] = false;
-		System.out.println("Omg, nie dziel przez zero...");
+		System.out.println("Omg, nie dziel przez zero...\n");
 	}
 	static void NullPointerException(boolean[] wyjatek)
 	{
 		wyjatek[0] = false;
-		System.out.println("Nie podano øadnej wartoúci. Wprowadü dane.");		
+		System.out.println("Nie podano øadnej wartoúci. Wprowadü dane.\n");		
 	}
 	static void zamaniaNaInt(int[] argumentyIntTabl, String[] argumentyStringTabl)
 	{
