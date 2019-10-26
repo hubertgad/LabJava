@@ -1,7 +1,6 @@
 // Napisz program realizuj¹cy funkcje kalkulatora, z uwzglêdnieniem, ograniczenia dzielenia przez 0.
 
 package lab2;
-import java.io.IOException;
 import java.util.Scanner;
 import java.util.regex.PatternSyntaxException;
 
@@ -11,9 +10,8 @@ public class Zadanie5
 	{
 		Scanner keyboard = new Scanner(System.in);
 		String wyrazenie = "NULL";
-		String[] argumentyStringTabl = new String[2];
-		int wynik = 0,
-			argumentyIntTabl[] = new int [2];
+		int[] argumentyIntTabl = new int [2];
+		int wynik = 0;
 		boolean[] wyjatek = new boolean[1];
 		wyjatek[0] = false;
 		System.out.print("Witaj we wspanialym kalkulatorze. Podaj wyra¿enie w formacie: \"liczba1 [znak] liczba2\" na przyk³ad: 2 + 2.\n"
@@ -96,6 +94,5 @@ public class Zadanie5
 	{
 		argumentyIntTabl[0] = Integer.parseInt(argumentyStringTabl[0]);
 		argumentyIntTabl[1] = Integer.parseInt(argumentyStringTabl[1]);
-		
 	}
 }
