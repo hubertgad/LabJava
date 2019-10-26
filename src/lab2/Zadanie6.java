@@ -19,49 +19,49 @@ public class Zadanie6
 		boolean kwotaPrawidlowa = false, 
 			iloscRatPrawidlowa = false, 
 			wplataWlasnaPrawidlowa = false;
-		
 		int wplataWlasna = 0,
 			wartosc = 0,
-			ilosc_rat = 0;
-		
+			kwotaSplaty = 0,
+			iloscRat = 0;
+		double wysokoscRaty = 0;
 		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Witaj! Obliczymy Ci mega korzystna ratke! Podaj kwote kretytu, wplate wlasna oraz liczbe rat.");
-		do
+		while (kwotaPrawidlowa == false)
 		{
-			System.out.println("Podaj kwote kredytu (maksymalnie 300 000): ");
+			System.out.println("Podaj kwote kredytu (maksymalnie 300000): ");
 			wartosc = keyboard.nextInt();
 			if ((wartosc <= 300000) & (wartosc>0))
-				kwota_prawidlowa = true;
-		} while (kwotaPawidlowa == false);
-		do
+				kwotaPrawidlowa = true;
+		}
+		while (wplataWlasnaPrawidlowa == false)
 		{
-			System.out.println("Podaj wysokosc wplaty wlasnej (0 - 100% kwoty): ");
+			System.out.println("Podaj wysokosc wplaty wlasnej (0 - " + wartosc + "): ");
 			wplataWlasna = keyboard.nextInt();
-			if ((wplataWlasna >= 0 ) & (wplataWlasna < wartosc))
+			if ((wplataWlasna >= 0 ) & (wplataWlasna <= wartosc))
 				wplataWlasnaPrawidlowa = true;
-		} while (wplataWlasnaPrawidlowa == false);
-		do
+		}
+		while (iloscRatPrawidlowa == false)
 		{
 			System.out.println("Podaj ilosc rat (maksymalnie 96): ");
-			ilosc_rat = keyboard.nextInt();
-			if ((ilosc_rat > 0) & (ilosc_rat <= 96) 
+			iloscRat = keyboard.nextInt();
+			if ((iloscRat > 0) & (iloscRat <= 96)) 
 				iloscRatPrawidlowa = true;
-		} while (iloscRatPrawidlowa == false);
+		}
 		keyboard.close();
 		double oprocentowanie = 1;
-		if (ilosc_rat <= 24)
+		if (iloscRat <= 24)
 			oprocentowanie = 1.02;
-		else if (ilosc_rat <= 48)
+		else if (iloscRat <= 48)
 			oprocentowanie = 1.03;
-		else if (ilosc_rat <= 60)
+		else if (iloscRat <= 60)
 			oprocentowanie = 1.04;
-		else if (ilosc_rat <= 72)
+		else if (iloscRat <= 72)
 			oprocentowanie = 1.05;
-		else if (ilosc_rat <= 96)
+		else if (iloscRat <= 96)
 			oprocentowanie = 1.06;
-		int kwota_splaty = wartosc - wplata_wlasna;
-		double wysokosc_raty = kwota_splaty * oprocentowanie / ilosc_rat;
+		kwotaSplaty = wartosc - wplataWlasna;
+		wysokoscRaty = kwotaSplaty * oprocentowanie / iloscRat;
 		System.out.print("Wysokosc raty: ");
-		System.out.format("%.2f%n", wysokosc_raty);
+		System.out.format("%.2f%n", wysokoscRaty);
 		}
 }
