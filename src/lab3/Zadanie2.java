@@ -46,3 +46,7 @@ public class Zadanie2
 		}
 	}
 }
+
+/*
+ * TO-DO: dodaæ opisy b³êdów
+ */ 
