@@ -5,6 +5,9 @@ import java.util.Scanner;
 
 public class Zadanie1 
 {
+	/**
+	 * @param args
+	 */
 	public static void main(String[] args) 
 	{
 		Scanner 
@@ -22,7 +25,7 @@ public class Zadanie1
 			sredniaParzyste = 0,
 			sredniaNieparzyste = 0,
 			stosunekNieparzysteParzyste = 0;
-		System.out.println("Dodaj element do listy element z zakresu 0 do 9. Aby przerwać dodawanie wpisz \"10\".");
+		System.out.println("Dodaj element do listy element z zakresu 0 do 9. Aby przerwac dodawanie wpisz \"10\".");
 		while (podanaLiczba != 10) 
 		{
 			podanaLiczba = keyboard.nextInt();
@@ -52,16 +55,22 @@ public class Zadanie1
 		sredniaNieparzyste = sumaNieparzyste / listaParzyste.size();
 		stosunekNieparzysteParzyste = sredniaNieparzyste / sredniaParzyste;
 		System.out.println("Lista 1: " + lista1);
-		System.out.println("Lista 2: " + listaNieparzyste);
-		System.out.println("Lista 3: " + listaParzyste);
-		System.out.println("L2 srednia: " + sredniaParzyste);
-		System.out.println("L3 srednia: " + sredniaNieparzyste);
-		System.out.println("Stosunek srednich: " + stosunekNieparzysteParzyste);
-		System.out.println("pierwotnaLiczba = " + pierwotnaLiczba);
+		System.out.println("Nieparzyste: " + listaNieparzyste);
+		System.out.println("Parzyste: " + listaParzyste);
+//		System.out.println("L2 srednia: " + sredniaParzyste);
+//		System.out.println("L3 srednia: " + sredniaNieparzyste);
+		System.out.println("Stosunek srednia parzystych / srednia nieparzystych: " + stosunekNieparzysteParzyste);
+//		System.out.println("pierwotnaLiczba = " + pierwotnaLiczba);
+		System.out.println("Czy wprowadzona liczba jest liczba pierwsza? " + czyLiczbaJestPierwsza(pierwotnaLiczba));
 		keyboard.close();
 	}
 	public static boolean czyLiczbaJestPierwsza(int liczba)
 	{
-		return false;
+		if (liczba < 2)
+			return false;
+		for (int i = 2; i * i <= liczba ; i++)
+			if (liczba %i == 0)
+				return false;
+		return true;
 	}
 }
