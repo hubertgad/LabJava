@@ -5,15 +5,26 @@
  *	W przypadku odgadnięcia wartości wylosowanej liczby użytkownik otrzyma odpowiedni komunikat.
  */
 package lab3;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Zadanie3
 {
 	public static void main(String[] args)
 	{
 		int i = 0;
-		try (Random generator = new Random)
+		Random generator = new Random();
+		i = (generator.nextInt() % 200);
+		System.out.println("Wylosowalem dla Ciebie pewna liczbe. \nOdgadnij jaka:");
+		int liczba = 0;
+		do
 		{
-			i = (generator.nextInt() % 200);
-		}		
+			try (Scanner keyboard = new Scanner(System.in))
+			{
+				liczba = keyboard.nextInt();
+				System.out.println((liczba == i) ? "Zgadeles." : (liczba < i ) ? "Troche za malo..." : "Troche za duzo...");
+			}
+		}
+		while (liczba != i);
 	}
 }
