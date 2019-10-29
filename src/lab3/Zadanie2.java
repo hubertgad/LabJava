@@ -1,4 +1,4 @@
-// Zrealizuj kod, który dla zadanej liczby ca³kowitej wyœwietla jej wszystkie dzielniki.
+// Zrealizuj kod, ktÃ³ry dla zadanej liczby caÅ‚kowitej wyÅ›wietla jej wszystkie dzielniki.
 package lab3;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
@@ -22,7 +22,9 @@ public class Zadanie2
 			}
 			catch (InputMismatchException IME)
 			{
-				System.out.println("Blad. Podaj liczbe calkowita: ");
+				System.out.println("Blad. Uzyto niedoswolonych znakow, co wywolalo wyjatek InputMismatchException.\n" +
+						   "W podanym wyrazeniu mozesz uzywac tylko znakow z zakresu 0 - 9.");
+				System.out.println("Podaj liczbe calkowita: ");
 				keyboard.nextLine();
 			}
 			catch (NoSuchElementException NSE)
@@ -47,5 +49,5 @@ public class Zadanie2
 	}
 }
 /*
- * TO-DO: dodaæ opisy b³êdów
+ * TO-DO: dodaÄ‡ opisy bÅ‚Ä™dÃ³w
  */ 
