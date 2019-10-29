@@ -22,8 +22,8 @@ public class Zadanie2
 			}
 			catch (InputMismatchException IME)
 			{
-				System.out.println("Blad. Uzyto niedoswolonych znakow, co wywolalo wyjatek InputMismatchException.\n" +
-						   "W podanym wyrazeniu mozesz uzywac tylko znakow z zakresu 0 - 9.");
+				System.out.println("Blad. Uzyto niedozwolonych znakow, co wywolalo wyjatek InputMismatchException.\n" +
+						   "W wyrazeniu mozesz uzywac tylko znakow z zakresu 0 - 9.");
 				System.out.println("Podaj liczbe calkowita: ");
 				keyboard.nextLine();
 			}
