@@ -1,8 +1,8 @@
-/*	Losujemy liczbÍ z zakresu od 1 do 200. 
- *	Zadaniem uøytkownika jest podanie w≥aúciwej wylosowanej liczby. 
- *	Jeøeli wczytana liczba jest mniejsza od wylosowanej uøytkownik zostanie o tym poinformowany, 
- *	tak samo jak w przypadku podania wartoúci wyøszej. 
- *	W przypadku odgadniÍcia wartoúci wylosowanej liczby uøytkownik otrzyma odpowiedni komunikat.
+/*	Losujemy liczbƒô z zakresu od 1 do 200. 
+ *	Zadaniem u≈ºytkownika jest podanie w≈Ça≈õciwej wylosowanej liczby. 
+ *	Je≈ºeli wczytana liczba jest mniejsza od wylosowanej u≈ºytkownik zostanie o tym poinformowany, 
+ *	tak samo jak w przypadku podania warto≈õci wy≈ºszej. 
+ *	W przypadku odgadniƒôcia warto≈õci wylosowanej liczby u≈ºytkownik otrzyma odpowiedni komunikat.
  */
 package lab3;
 
@@ -10,7 +10,10 @@ public class Zadanie3
 {
 	public static void main(String[] args)
 	{
-		// TODO Auto-generated method stub
+		int i = 0;
+		try (Random generator = new Random)
+		{
+			i = (generator.nextInt() % 200);
+		}		
 	}
-
 }
