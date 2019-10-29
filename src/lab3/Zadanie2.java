@@ -9,13 +9,12 @@ public class Zadanie2
 {
 	public static void main(String[] args)
 	{
-		Scanner keyboard = new Scanner(System.in);
 		System.out.println("Podaj liczbe, ktorej dzielniki chcesz wyznaczyc: ");
 		int podanaLiczba = 0;
 		boolean wystapilWyjatek = true;
 		do
 		{
-			try
+			try (Scanner keyboard = new Scanner(System.in))
 			{
 				podanaLiczba = keyboard.nextInt();
 				wystapilWyjatek = false;
@@ -37,7 +36,6 @@ public class Zadanie2
 		Vector<Integer> tablicaDzielnikow = new Vector<Integer>();
 		wyznaczDzielniki(podanaLiczba, tablicaDzielnikow);
 		System.out.println("Oto lista dzielnikow podanej liczby: \n"+ tablicaDzielnikow);
-		keyboard.close();
 	}
 	public static void wyznaczDzielniki(int liczba, Vector<Integer> tablicaDzielnikow)
 	{
