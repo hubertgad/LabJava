@@ -27,7 +27,6 @@ public class Zadanie3
 				System.out.println(output);
 			}
 		}
-		while (liczba != i);
-		
+		while (liczba != i);		
 	}
 }
