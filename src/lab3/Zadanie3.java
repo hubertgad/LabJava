@@ -22,9 +22,12 @@ public class Zadanie3
 			try (Scanner keyboard = new Scanner(System.in))
 			{
 				liczba = keyboard.nextInt();
-				System.out.println((liczba == i) ? "Zgadeles." : (liczba < i ) ? "Troche za malo..." : "Troche za duzo...");
+				String output = (liczba == i) ? "Zgadles." : 
+					(liczba > i) ? "Troche za duzo." : "Troche za malo."; 
+				System.out.println(output);
 			}
 		}
 		while (liczba != i);
+		
 	}
 }
