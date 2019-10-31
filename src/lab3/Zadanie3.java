@@ -12,21 +12,22 @@ public class Zadanie3
 {
 	public static void main(String[] args)
 	{
-		int i = 0;
+		int i = 0,
+				liczba = 0;
+		String output;
 		Random generator = new Random();
-		i = (generator.nextInt() % 200);
+		i = Math.abs(generator.nextInt() % 200);
 		System.out.println("Wylosowalem dla Ciebie pewna liczbe. \nOdgadnij jaka:");
-		int liczba = 0;
-		do
+		try (Scanner keyboard = new Scanner(System.in))
 		{
-			try (Scanner keyboard = new Scanner(System.in))
+			do
 			{
 				liczba = keyboard.nextInt();
-				String output = (liczba == i) ? "Zgadles." : 
+				output = (liczba == i) ? "Zgadles." : 
 					(liczba > i) ? "Troche za duzo." : "Troche za malo."; 
 				System.out.println(output);
 			}
+			while (liczba != i);
 		}
-		while (liczba != i);		
 	}
 }
