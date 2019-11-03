@@ -1,4 +1,4 @@
-// Zrealizuj kod, który dla zadanej liczby całkowitej wyświetla jej wszystkie dzielniki.
+// Zrealizuj kod, ktory dla zadanej liczby calkowitej wyswietla jej wszystkie dzielniki.
 package lab3;
 import java.util.InputMismatchException;
 import java.util.NoSuchElementException;
@@ -16,20 +16,17 @@ public class Zadanie2
 		{
 			try (Scanner keyboard = new Scanner(System.in))
 			{
-				podanaLiczba = keyboard.nextInt();
-				wystapilWyjatek = false;
-			}
-			catch (InputMismatchException IME)
-			{
-				System.out.println("Blad. Uzyto niedozwolonych znakow, co wywolalo wyjatek InputMismatchException.\n" +
-						   "W wyrazeniu mozesz uzywac tylko znakow z zakresu 0 - 9.");
-				System.out.println("Podaj liczbe calkowita: ");
-				keyboard.nextLine();
-			}
-			catch (NoSuchElementException NSE)
-			{
-				System.out.println("Blad. Podaj liczbe calkowita: ");
-				keyboard.nextLine();
+				try
+				{
+					podanaLiczba = keyboard.nextInt();
+					wystapilWyjatek = false;
+				}
+				catch (InputMismatchException IME)
+				{
+					System.out.println("Blad. W wyrazeniu mozesz uzywac tylko znakow z zakresu 0 - 9.\n"
+						+ "Podaj liczbe calkowita: ");
+					keyboard.nextLine();
+				}
 			}
 		}
 		while (wystapilWyjatek == true);
@@ -39,13 +36,11 @@ public class Zadanie2
 	}
 	public static void wyznaczDzielniki(int liczba, Vector<Integer> tablicaDzielnikow)
 	{
-		for (int i = 1; i * i <= Math.abs(liczba); i++)
+		for (int i = 1; i <= Math.abs(liczba) / 2; i++)
 		{
 			if (liczba %i == 0)
 				tablicaDzielnikow.add(i);
 		}
+		tablicaDzielnikow.add(liczba);
 	}
 }
-/*
- * TO-DO: dodać opisy błędów
- */ 

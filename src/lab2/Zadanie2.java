@@ -1,7 +1,6 @@
 // Wyznacz równanie kwadratowe z podanych przez u¿ytkownika wartoœci parametrów a, b i c.
 
 package lab2;
-import java.lang.Math.*;
 import java.util.Scanner;
 
 public class Zadanie2 {

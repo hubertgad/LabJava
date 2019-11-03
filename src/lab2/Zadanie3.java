@@ -1,7 +1,6 @@
 // Wczytaj kilka (x) liczb i wyznacz wartoœci min, max, œredni¹, oraz iloœæ podanych liczb.
 
 package lab2;
-import java.lang.Math.*;
 import java.util.Scanner;
 
 public class Zadanie3 {
