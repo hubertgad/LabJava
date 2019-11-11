@@ -10,40 +10,40 @@ public class Zadanie2
 		int[] min = new int[7],
 				max = new int[7];
 		Random rand = new Random();
-		for (int i = 0; i < tablica.length; i++)
+		for (int k = 0; k < tablica.length; k++)
 		{
-			for (int j = 0; j < tablica[i].length; j++)
+			for (int w = 0; w < tablica[k].length; w++)
 			{
-				tablica[i][j] = Math.abs(rand.nextInt()%10);
-				if (j == 0)
-					min[i] = tablica[i][j];
-				else if (tablica[i][j] < min[i])
-					min[i] = tablica[i][j];
-				if (j == 0)
-					max[i] = tablica[i][j];
-				else if (tablica[i][j] > max[i])
-					max[i] = tablica[i][j];
+				tablica[k][w] = Math.abs(rand.nextInt()%10);
+				if (w == 0)
+					min[k] = tablica[k][w];
+				else if (tablica[k][w] < min[k])
+					min[k] = tablica[k][w];
+				if (w == 0)
+					max[k] = tablica[k][w];
+				else if (tablica[k][w] > max[k])
+					max[k] = tablica[k][w];
 			}
 		}
 		out.println("Tablica: ");
-		for (int i = 0; i < tablica.length; i++)
+		for (int w = 0; w < tablica.length; w++)
 		{
-			for (int j = 0; j < tablica[i].length; j++)
+			for (int k = 0; k < tablica[w].length; k++)
 			{
-				out.print(tablica[j][i] + " ");
+				out.print(tablica[k][w] + " ");
 			}
 			out.println();
 		}
 		out.println("Minimum: ");
-		for (int i = 0; i < min.length; i++)
+		for (int k = 0; k < min.length; k++)
 		{
-			out.print(min[i] + " ");
+			out.print(min[k] + " ");
 		}
 		out.println();
 		out.println("Maksimum: ");
-		for (int i = 0; i < max.length; i++)
+		for (int k = 0; k < max.length; k++)
 		{
-			out.print(max[i] + " ");
+			out.print(max[k] + " ");
 		}
 	}
 }

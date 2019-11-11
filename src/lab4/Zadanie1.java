@@ -9,7 +9,7 @@ public class Zadanie1
 		int i = 99;
 		for (int j = 0; j < tablica1.length; j++)
 			tablica1[j]  = i++;
-		int[] tablica2 = tablica1;
+		int[] tablica2 = (int[]) tablica1.clone();
 		out.print("Tablica nr 1: [ ");
 		for (int element : tablica1)
 			out.print(element + " ");

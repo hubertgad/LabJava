@@ -1,3 +1,11 @@
 /bin/
 *.project
 *.classpath
+*.idea
+/.idea/
+/.idea/codeStyles/
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/vcs.xml
+/.idea/workspace.xml
