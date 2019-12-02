@@ -2,13 +2,13 @@ package lab5.Zadanie4;
 import java.util.Random;
 import static java.lang.System.*;
 
-abstract public class ZbiornikPlynu extends Zbiornik
+abstract class ZbiornikPlynu extends Zbiornik
 {
-    protected int temperatura;
-    protected int cisnienie;
-    protected int iloscDoPompowania;
+    private int temperatura;
+    int cisnienie;
+    int iloscDoPompowania;
 
-    public void setTemperatura(int temperatura)
+    void setTemperatura(int temperatura)
     {
         if (temperatura > 100)
         {
@@ -27,7 +27,7 @@ abstract public class ZbiornikPlynu extends Zbiornik
         System.out.println("Ustawiam temperature na " + this.temperatura + " stopni.");
     }
 
-    public void setCisnienie(int cisnienie)
+    void setCisnienie(int cisnienie)
     {
         if (cisnienie > 25)
         {
@@ -45,7 +45,7 @@ abstract public class ZbiornikPlynu extends Zbiornik
         }
         out.println("Ustawiam cisnienie na " + cisnienie + " b");
     }
-    public void setIloscDoPompowania(int iloscDoPompowania)
+    void setIloscDoPompowania(int iloscDoPompowania)
     {
         if (iloscDoPompowania > 300)
         {

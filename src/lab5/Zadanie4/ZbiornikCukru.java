@@ -1,9 +1,9 @@
 package lab5.Zadanie4;
 import static java.lang.System.*;
 
-public class ZbiornikCukru extends ZbiornikProszku
+class ZbiornikCukru extends ZbiornikProszku
 {
-    protected IloscCukru iloscDoPodania;
+    private IloscCukru iloscDoPodania;
     void setIloscDoPodania(IloscCukru iloscDoPodania)
     {
         this.iloscDoPodania = iloscDoPodania;

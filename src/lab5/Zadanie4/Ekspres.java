@@ -80,13 +80,13 @@ public class Ekspres implements InterfejsEkspresu
         Przepisy.add(new Przepis(ID, iloscWody, iloscMleka, cisnienieWody, temperaturaWody, iloscKawy));
     }
 
-    void menu()
+    private void menu()
     {
-        do
+        while (true)
         {
             out.println("1. Zrealizuj przepis");
             out.println("2. Dodaj nowy przepis");
-            int wybor = 0;
+            int wybor;
             try
             {
                 wybor = this.kb.nextInt();
@@ -104,11 +104,10 @@ public class Ekspres implements InterfejsEkspresu
                 out.println("Wprowadzono niewlasciwa wartosc. Sprobuj ponownie...");
             }
         }
-        while (true);
     }
 
     @Override
-    public IloscCukru wybierzIloscCukru()
+    public void wybierzIloscCukru()
     {
         boolean wyjatek = true;
         int wybor = 0;
@@ -157,7 +156,6 @@ public class Ekspres implements InterfejsEkspresu
                 break;
             }
         }
-        return iloscCukru;
     }
 
     Ekspres() {

@@ -6,5 +6,5 @@ public interface InterfejsEkspresu
 {
     void realizujPrzepis(List<Przepis> Przepisy);
     void dodajNowyPrzepis(List<Przepis> Przepisy);
-    IloscCukru wybierzIloscCukru();
+    void wybierzIloscCukru();
 }
