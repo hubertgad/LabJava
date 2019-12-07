@@ -1,4 +1,4 @@
-package lab5.Zadanie5;
+package lab5.Zadanie5_6_7;
 
 class Rectangle extends Point {
     public int width;
@@ -26,8 +26,8 @@ class Rectangle extends Point {
     {
         this.x = p.x;
         this.y = p.y;
-        width = w;
-        height = h;
+        this.width = w;
+        this.height = h;
     }
     public void move(int x, int y)
     {

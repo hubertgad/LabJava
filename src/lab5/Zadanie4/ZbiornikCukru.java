@@ -11,9 +11,9 @@ class ZbiornikCukru extends ZbiornikProszku
     @Override
     void nasyp()
     {
-        if (iloscDoPodania != IloscCukru.C0)
+        if (this.iloscDoPodania != IloscCukru.C0)
         {
-            out.println("Wsypuje " + iloscDoPodania.toString() + " porcje cukru.");
+            out.println("Wsypuje " + this.iloscDoPodania.toString() + " porcje cukru.");
         }
     }
     ZbiornikCukru()

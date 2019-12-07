@@ -7,10 +7,10 @@ public class ZbiornikMleka extends ZbiornikPlynu
     @Override
     void pompuj()
     {
-        if (aktualnaIlosc > this.iloscDoPompowania)
+        if (this.aktualnaIlosc > this.iloscDoPompowania)
         {
             System.out.println("Pompuje mleko w ilosci " + this.iloscDoPompowania + " ml.");
-            aktualnaIlosc -= this.iloscDoPompowania;
+            this.aktualnaIlosc -= this.iloscDoPompowania;
             out.println("W zbiorniku pozostało " + this.aktualnaIlosc + " ml mleka.");
         }
         else

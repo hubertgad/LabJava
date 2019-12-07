@@ -22,6 +22,6 @@ public class Przepis
     {
         return "Ilosc wody: " + this.iloscWody + "ml, ilosc mleka: " + this.iloscMleka + "ml, cisnienie wody: "
                 + this.cisnienieWody + "bar(y/ow), temperatura wody: " + this.temperaturaWody + " stopni, ilosc kawy: "
-                + iloscKawy + " gramow.";
+                + this.iloscKawy + " gramow.";
     }
 }
