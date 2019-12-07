@@ -3,9 +3,20 @@ package lab5.Zadanie8;
 abstract public class Bramka
 {
     protected int inputs;
-    protected String Input;
-    protected int Output;
+    String Input = "";
+    String Output;
 
-    abstract public void setInputs(int inputs);
-    abstract public int getOutput();
+    void setInputs(String inputs)
+    {
+        this.Input = inputs;
+    }
+    String getOutput()
+    {
+        return this.Output;
+    }
+    void calculateInputs()
+    {
+        this.inputs = this.Input.length();
+    }
+    abstract protected void calculateOutput();
 }
