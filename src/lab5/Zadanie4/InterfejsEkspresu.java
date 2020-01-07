@@ -1,5 +1,4 @@
 package lab5.Zadanie4;
-
 import java.util.List;
 
 public interface InterfejsEkspresu

@@ -26,7 +26,6 @@ abstract class ZbiornikPlynu extends Zbiornik
         }
         System.out.println("Ustawiam temperature na " + this.temperatura + " stopni.");
     }
-
     void setCisnienie(int cisnienie)
     {
         if (cisnienie > 25)
@@ -59,7 +58,6 @@ abstract class ZbiornikPlynu extends Zbiornik
         }
         this.iloscDoPompowania = iloscDoPompowania;
     }
-    abstract void pompuj();
     ZbiornikPlynu()
     {
         this.aktualnaIlosc = 1500;
@@ -67,4 +65,5 @@ abstract class ZbiornikPlynu extends Zbiornik
         this.temperatura = new Random().nextInt(20)+80;
         this.cisnienie = 1;
     }
+    abstract void pompuj();
 }

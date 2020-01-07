@@ -1,9 +1,7 @@
 package lab5.Zadanie4;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
-
 import static java.lang.System.in;
 import static java.lang.System.out;
 
@@ -17,6 +15,21 @@ public class Ekspres implements InterfejsEkspresu
     private int wybranaKawa;
     private IloscCukru iloscCukru = IloscCukru.C0;
     private Scanner kb = new Scanner(in);
+
+    Ekspres() {
+        this.wybranaKawa = 0;
+        this.Przepisy = new ArrayList<>();
+        this.Przepisy.add(new Przepis(0, 20, 0, 9, 80, 30));
+        this.Przepisy.add(new Przepis(1, 50, 0, 3, 80,20));
+        this.Przepisy.add(new Przepis(2, 80, 120, 4, 80,25));
+        this.Przepisy.add(new Przepis(3, 120, 0, 5, 80,20));
+        this.Przepisy.add(new Przepis(4, 220, 20, 11, 80,15));
+        this.zbiornikKawy = new ZbiornikKawy();
+        this.zbiornikWody = new ZbiornikWody();
+        this.zbiornikMleka = new ZbiornikMleka();
+        this.zbiornikCukru = new ZbiornikCukru();
+        menu();
+    }
 
     @Override
     public void realizujPrzepis(List<Przepis> Przepisy)
@@ -156,20 +169,5 @@ public class Ekspres implements InterfejsEkspresu
                 break;
             }
         }
-    }
-
-    Ekspres() {
-        this.wybranaKawa = 0;
-        this.Przepisy = new ArrayList<>();
-        this.Przepisy.add(new Przepis(0, 20, 0, 9, 80, 30));
-        this.Przepisy.add(new Przepis(1, 50, 0, 3, 80,20));
-        this.Przepisy.add(new Przepis(2, 80, 120, 4, 80,25));
-        this.Przepisy.add(new Przepis(3, 120, 0, 5, 80,20));
-        this.Przepisy.add(new Przepis(4, 220, 20, 11, 80,15));
-        this.zbiornikKawy = new ZbiornikKawy();
-        this.zbiornikWody = new ZbiornikWody();
-        this.zbiornikMleka = new ZbiornikMleka();
-        this.zbiornikCukru = new ZbiornikCukru();
-        menu();
     }
 }

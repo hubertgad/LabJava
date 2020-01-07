@@ -8,6 +8,7 @@ public class Przepis
     int cisnienieWody;
     int temperaturaWody;
     int iloscKawy;
+
     Przepis(int ID, int iloscWody, int iloscMleka, int cisnienieWody, int temperaturaWody, int iloscKawy)
     {
         this.ID = ID;

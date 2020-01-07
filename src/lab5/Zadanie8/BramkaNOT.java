@@ -18,13 +18,13 @@ public class BramkaNOT extends Bramka
     @Override
     protected void calculateOutput()
     {
-        for (var v : this.Input.toCharArray())
+        for (var znak : this.Input.toCharArray())
         {
-            if (Character.valueOf(v).equals('1'))
+            if (Character.valueOf(znak).equals('1'))
             {
                 this.Output += '0';
             }
-            else if (Character.valueOf(v).equals('0'))
+            else if (Character.valueOf(znak).equals('0'))
             {
                 this.Output += '1';
             }

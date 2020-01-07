@@ -4,7 +4,6 @@ class Rectangle extends Point {
     public int width;
     public int height;
 
-    // four constructors
     public Rectangle()
     {
         super();

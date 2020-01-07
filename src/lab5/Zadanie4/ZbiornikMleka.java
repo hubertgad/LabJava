@@ -1,5 +1,4 @@
 package lab5.Zadanie4;
-
 import static java.lang.System.*;
 
 public class ZbiornikMleka extends ZbiornikPlynu
