@@ -1,4 +1,4 @@
-package lab6.Zadanie1;
+package lab6.Zadanie1_3;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
@@ -45,12 +45,11 @@ public class Kalkulator
         {
             this.wynik += liczba;
         }
-        zapiszDaneWPliku();
         return this.wynik;
     }
-    private void zapiszDaneWPliku()
+    public void zapiszDaneWPliku()
     {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/lab6/Zadanie1/Kalkulator.txt")))
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter("src/lab6/Zadanie1_3/Kalkulator.txt")))
         {
             writer.write("Uzyte liczby: " + this.liczby.toString());
             writer.newLine();
