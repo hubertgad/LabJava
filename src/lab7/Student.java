@@ -2,12 +2,12 @@ package lab7;
 
 public class Student
 {
-    String imie;
-    String nazwisko;
-    int numerIndeksu;
+    private String imie;
+    private String nazwisko;
+    private int numerIndeksu;
     Student()
     {
-        ;
+
     }
     Student(String imie, String nazwisko, int numerIndeksu)
     {
@@ -18,12 +18,6 @@ public class Student
     @Override
     public String toString()
     {
-        StringBuilder sb = new StringBuilder();
-        sb.append(this.imie)
-                .append(" ")
-                .append(this.nazwisko)
-                .append(", numer indeksu: ")
-                .append(this.numerIndeksu);
-        return sb.toString();
+        return this.imie + " " + this.nazwisko + ", numer indeksu: " + this.numerIndeksu;
     }
 }
